@@ -1,17 +1,19 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define HRML(k1,k2,k3,k4) &ht LALT   k1 &ht LCTRL k2  &ht LGUI  k3 &ht LSHIFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHIFT k1 &ht RGUI  k2  &ht RCTRL k3 &ht RALT k4
 
-#define LRC 0
-#define LSM 1
-#define LQW 2
-#define LSY 3
-#define LNV 4
-#define LFN 5
+#define LRC 0   //recurva_layer
+#define LSM 1   //semimak_layer
+#define LQW 2   //qwerty_layer
+#define LSY 3   //sym_layer
+#define LNV 4   //nav_layer
+#define LFN 5   //function_layer
+#define LDA 6   //dia_layer
+#define LDS 7   //dias_layer 
+#define LAD 8   //adjust_layer
 
 / {
     behaviors {
@@ -29,10 +31,89 @@
 
     combos {
         compatible = "zmk,combos";
+
         combo_caps {
             timeout-ms = <50>;
             key-positions = <13 16>;
             bindings = <&caps_word>;
+        };
+
+        u_caret {
+            bindings = <&cmp CARET U>;
+            key-positions = <15 25>;
+        };
+
+        o_caret {
+            bindings = <&cmp CARET O>;
+            key-positions = <16 26>;
+        };
+
+        e_caret {
+            bindings = <&cmp CARET E>;
+            key-positions = <17 27>;
+        };
+
+        a_caret {
+            bindings = <&cmp CARET A>;
+            key-positions = <18 28>;
+        };
+
+        i_caret {
+            bindings = <&cmp CARET I>;
+            key-positions = <19 29>;
+        };
+
+        Semicolon {
+            bindings = <&kp SEMI>;
+            key-positions = <27 28>;
+            layers = <1 2>;
+        };
+
+        exclaim {
+            bindings = <&kp EXCL>;
+            key-positions = <26 27>;
+        };
+
+        dquot {
+            bindings = <&kp DQT>;
+            key-positions = <27 28>;
+            layers = <0 4>;
+        };
+
+        question {
+            bindings = <&kp QUESTION>;
+            key-positions = <23 22>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <22 21>;
+        };
+
+        slash {
+            bindings = <&kp SLASH>;
+            key-positions = <20 21>;
+        };
+
+        backslash {
+            bindings = <&kp BSLH>;
+            key-positions = <29 28>;
+        };
+    };
+
+    macros {
+        smile: smile {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&kp COLON &kp MINUS &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "SMILE";
+        };
+
+        cmp: comp {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&kp RALT &macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
+            label = "COMP";
         };
     };
 
@@ -40,7 +121,7 @@
         compatible = "zmk,keymap";
 
         recurva_layer {
-/* Recurva colstag 1 
+            /* Recurva colstag 1 
  *
  * ,----------------------------------.                      ,----------------------------------.
  * |   F  |   R  |   D  |   P  |   V  |                      |   Q  |   M  |   U  |   O  |   Y  |
@@ -53,15 +134,17 @@
  *                      | SPACE | TAB  |                     | BS | ENTER |  
  *                      `--------------'                     `------------'  
  */
+
             bindings = <
-            &kp F       &kp R       &kp D       &kp P       &kp V           &kp Q    &kp M       &kp U       &kp O       &kp Y
-            HRML(S,     N,          T,          C)          &kp B           &kp DOT  HRMR(H,     E,          A,          I)
-            &lt LFN Z   &kp X       &kp K       &kp G       &kp W           &kp J    &kp L       &kp SEMI    &kp SQT     &kp COMMA
-                                      &lt LNV TAB  &kp SPACE    &kp BSPC   &lt LSY ENTER
+&kp F       &kp R       &kp D        &kp P        &kp V          &kp Q       &kp M        &kp U        &kp O       &kp Y
+&mt LGUI S  &mt LALT N  &mt LCTRL T  &mt LSHFT C  &kp B          &kp DOT     &mt RSHFT H  &mt RCTRL E  &mt RALT A  &mt RGUI I
+&lt 8 Z     &kp X       &kp K        &kp G        &kp W          &kp J       &kp L        &kp SEMI     &kp SQT     &lt 8 COMMA
+                                     &lt 5 TAB    &lt 4 SPACE    &lt 3 BSPC  &lt 7 ENTER
             >;
-        };  
+        };
+
         semimak_layer {
-/* Semimak JQZ
+            /* Semimak JQZ
  *
  * ,----------------------------------.                      ,----------------------------------.
  * |   F  |   L  |   H  |   V  |   X  |                      |   '  |   W  |   U  |   O  |   Y  |
@@ -74,55 +157,80 @@
  *                      | SPACE | TAB  |                     | BS | ENTER |  
  *                      `--------------'                     `------------'  
  */
+
             bindings = <
-    &kp F       &kp L       &kp H       &kp V       &kp X           &kp SQT  &kp W       &kp U       &kp O       &kp Y
-    HRML(S,     R,          N,          T) &kp K           &kp C    HRMR(D,     E,          A,          I)
-    &lt LFN Z   &kp J       &kp B       &kp M       &kp Q           &kp P    &kp G       &kp COMMA   &kp DOT     &kp FSLH
-                                      &lt LNV TAB  &kp SPACE    &kp BSPC   &lt LSY ENTER
+&kp F       &kp L       &kp H        &kp V        &kp X          &kp SQT     &kp W        &kp U        &kp O       &kp Y
+&mt LGUI S  &mt LALT R  &mt LCTRL N  &mt LSHFT T  &kp K          &kp C       &mt RSHFT D  &mt RCTRL E  &mt RALT A  &mt RGUI I
+&lt 8 Z     &kp J       &kp B        &kp M        &kp Q          &kp P       &kp G        &kp COMMA    &kp DOT     &kp FSLH
+                                     &lt 5 TAB    &lt 4 SPACE    &lt 3 BSPC  &lt 7 ENTER
             >;
-        };  
+        };
+
         qwerty_layer {
             bindings = <
-            &kp Q     &kp W   &kp E   &kp R        &kp T          &kp Y      &kp U      &kp I      &kp O    &kp P
-            HRML(A,   S,      D,      F)           &kp G          &kp H      HRMR(J,    K,         L,       SEMI)
-            &lt LFN Z &kp X   &kp C   &kp V        &kp B          &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH
-                                      &lt LNV TAB  &kp SPACE    &kp BSPC   &lt LSY ENTER
+&kp Q       &kp W       &kp E        &kp R        &kp T          &kp Y       &kp U        &kp I        &kp O       &kp P
+&mt LGUI A  &mt LALT S  &mt LCTRL D  &mt LSHFT F  &kp G          &kp H       &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMI
+&lt 8 Z     &kp X       &kp C        &kp V        &kp B          &kp N       &kp M        &kp COMMA    &kp DOT     &kp FSLH
+                                     &lt 5 TAB    &lt 4 SPACE    &lt 3 BSPC  &lt 7 ENTER
             >;
         };
 
         sym_layer {
             bindings = <
-            &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &none   &none      &none    &none    &none
-            &kp N6    &kp N7    &kp N8    &kp N9    &kp N0      &none   &kp LSHIFT &kp LGUI &kp LCTL &kp LALT
-            &kp GRAVE &kp BSLH  &kp EQUAL &kp LBKT  &kp RBKT    &none   &none      &none    &none    &none
-                                          &kp SQT   &kp MINUS   &trans  &trans
+&kp LS(PRCNT)  &kp LS(PLUS)  &kp MINUS     &kp LS(DLLR)     &kp LS(LBRC)    &kp LS(RBRC)  &kp N7  &kp N8  &kp N9  &kp LS(AT)
+&mt LWIN EXCL  &mt LALT LT   &mt LCTRL GT  &mt LSHFT EQUAL  &kp LS(LPAR)    &kp LS(RPAR)  &kp N1  &kp N2  &kp N3  &kp N0
+&kp LS(CARET)  &kp LS(STAR)  &kp FSLH      &kp LS(UNDER)    &kp LBKT        &kp RBKT      &kp N4  &kp N5  &kp N6  &kp DOT
+                                           &kp LS(AMPS)     &kp LS(PIPE)    &trans        &trans
             >;
         };
 
         nav_layer {
             bindings = <
-            &none    &none     &none    &none      &none        &none    &kp HOME   &kp UARW   &kp END   &kp PG_UP
-            &kp LALT &kp LCTRL &kp LGUI &kp LSHIFT &none        &none    &kp LARW   &kp DARW   &kp RARW  &kp PG_DN
-            &none    &none     &none    &none      &none        &none    &none      &none      &none     &none
-                                        &trans     &trans       &kp DEL  &kp ESC
+&none     &none     &none      &none       &none        &kp LG(V)      &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)
+&kp LWIN  &kp LALT  &kp LCTRL  &kp LSHIFT  &kp PSCRN    &kp LC(A)      &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+&none     &none     &none      &none       &none        &kp ESC        &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
+                               &trans      &trans       &kp BACKSPACE  &kp DEL
+            >;
+
+            label = "nav";
+        };
+
+        dia_layer {
+            bindings = <
+&smile LPAR  &smile PIPE  &smile RPAR  &cmp EQUAL E  &trans    &cmp GRAVE U  &cmp GRAVE O  &cmp GRAVE E  &cmp GRAVE A  &cmp GRAVE I
+&cmp S S     &trans       &mo 6        &kp LSHFT     &trans    &cmp DQT U    &cmp DQT O    &cmp DQT E    &cmp DQT A    &cmp DQT I
+&trans       &trans       &trans       &trans        &trans    &cmp SQT U    &cmp SQT O    &cmp SQT E    &cmp SQT A    &cmp SQT I
+                                       &trans        &trans    &trans        &trans
+            >;
+        };
+
+        dias_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &cmp DQT LS(E)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans          &trans  &trans
+                        &trans  &trans    &trans  &trans
+            >;
+        };
+
+        function_layer {
+            bindings = <
+&to 8     &none     &none      &none      &none    &none  &kp F9  &kp F10  &kp F11  &kp F12
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &none  &kp F5  &kp F6   &kp F7   &kp F8
+&none     &none     &none      &none      &none    &none  &kp F1  &kp F2   &kp F3   &kp F4
+                               &none      &none    &none  &none
             >;
         };
 
         adjust_layer {
             bindings = <
-            &bootloader &none     &kp A   &bt BT_PRV &bt BT_SEL 0     &bt BT_SEL 3  &bt BT_NXT &kp A  &none  &bootloader
-            &none       &none     &none   &none      &bt BT_SEL 1     &bt BT_SEL 4  &none      &none  &none  &none
-            &trans      &none     &none   &none      &bt BT_SEL 2     &bt BT_CLR    &none      &none  &none  &bt BT_CLR_ALL
-                                          &none      &none            &none         &none
+&bootloader   &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR        &none  &none  &none  &none  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none  &to 0  &to 1  &to 2  &none
+&trans        &none         &none         &none         &bt BT_CLR_ALL    &none  &none  &none  &none  &trans
+                                          &none         &none             &none  &none
             >;
         };
     };
-        conditional_layers {
-        compatible = "zmk,conditional-layers";
 
-        functionlayer {
-            if-layers = <LSY LNV>;
-            then-layer = <LFN>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
