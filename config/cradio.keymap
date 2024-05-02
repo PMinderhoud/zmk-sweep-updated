@@ -129,6 +129,12 @@
             bindings = <&kp DEL>;
             key-positions = <33 32>;
         };
+
+        isnot {
+            bindings = <&isnot>;
+            key-positions = <10 13>;
+            layers = <3>;
+        };
     };
 
     macros {
@@ -144,6 +150,13 @@
             #binding-cells = <2>;
             bindings = <&kp RALT &macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
             label = "COMP";
+        };
+
+        isnot: isnot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp SPACE &kp I &kp S &kp SPACE &kp N &kp O &kp T &kp SPACE>;
+            label = "ISNOT";
         };
     };
 
