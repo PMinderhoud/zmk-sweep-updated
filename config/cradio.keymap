@@ -77,31 +77,37 @@
             timeout-ms = <50>;
             key-positions = <13 16>;
             bindings = <&caps_word>;
+            layers = <LRC LSM LQW>;
         };
 
         u_caret {
             bindings = <&cmp CARET U>;
             key-positions = <15 25>;
+            layers = <LDA>;
         };
 
         o_caret {
             bindings = <&cmp CARET O>;
             key-positions = <16 26>;
+            layers = <LDA>;
         };
 
         e_caret {
             bindings = <&cmp CARET E>;
             key-positions = <17 27>;
+            layers = <LDA>;
         };
 
         a_caret {
             bindings = <&cmp CARET A>;
             key-positions = <18 28>;
+            layers = <LDA>;
         };
 
         i_caret {
             bindings = <&cmp CARET I>;
             key-positions = <19 29>;
+            layers = <LDA>;
         };
 
         Semicolon {
@@ -118,7 +124,7 @@
         dquot {
             bindings = <&kp DQT>;
             key-positions = <27 28>;
-            layers = <0 4>;
+            layers = <LRC LSM LQW LSY>;
         };
 
         question {
@@ -154,7 +160,7 @@
         isnot {
             bindings = <&isnot>;
             key-positions = <10 13>;
-            layers = <3>;
+            layers = <LSY>;
         };
     };
 
