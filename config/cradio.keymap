@@ -11,8 +11,8 @@
 #define LQW 2   //qwerty_layer
 #define LSY 3   //sym_layer
 #define LNV 4   //nav_layer
-#define LFN 5   //function_layer
-#define LDA 6   //dia_layer
+#define LDA 5   //dia_layer
+#define LFN 6   //function_layer
 #define LAD 7   //adjust_layer
 
 /* Global settings */
@@ -203,7 +203,7 @@
 &kp  F       &kp  R       &kp D         &kp P         &kp V          &kp Q       &kp  M        &kp  U        &kp  O       &kp  Y
 &hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT C  &kp B          &kp DOT     &hmr RSHFT H  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
 &lt  LAD Z   &kp  X       &kp K         &kp G         &kp W          &kp J       &kp  L        &kp  SEMI     &kp  SQT     &kp  COMMA
-                                     &lt LDA SPACE    &lt LNV TAB    &lt LFN ENTER  &lt LFN BSPC
+                                     &lt LNV SPACE    &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
             >;
         };
 
@@ -226,7 +226,7 @@
 &kp  F       &kp  L       &kp  H        &kp  V        &kp X          &kp SQT     &kp  W        &kp  U        &kp  O       &kp  Y
 &hml LGUI S  &hml LALT R  &hml LCTRL N  &hml LSHFT T  &kp K          &kp C       &hmr RSHFT D  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
 &lt LAD Z    &kp  J       &kp  B        &kp  M        &kp Q          &kp P       &kp  G        &kp  COMMA    &kp  DOT     &kp  FSLH
-                                     &lt LDA SPACE    &lt LNV TAB    &lt LFN ENTER  &lt LFN BSPC
+                                     &lt LNV SPACE    &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
             >;
         };
 
@@ -235,7 +235,7 @@
 &kp  Q       &kp  W       &kp  E        &kp  R        &kp T          &kp Y       &kp  U        &kp  I        &kp  O       &kp  P
 &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H       &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI
 &lt  LAD Z   &kp  X       &kp  C        &kp  V        &kp B          &kp N       &kp  M        &kp  COMMA    &kp  DOT     &kp  FSLH
-                                     &lt LDA SPACE    &lt LNV TAB    &lt LFN ENTER  &lt LFN BSPC
+                                     &lt LNV SPACE    &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
             >;
         };
 
