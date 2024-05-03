@@ -25,7 +25,7 @@
 
 / {
     behaviors {
-        hml: hold_tap {
+        hml: hml {
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
@@ -35,7 +35,7 @@
             hold-trigger-on-release;             // delay positional check until key-release
         };
         
-        hmr: hold_tap {
+        hmr: hmr {
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
