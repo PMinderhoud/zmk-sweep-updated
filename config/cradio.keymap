@@ -12,8 +12,9 @@
 #define LSY 3   //sym_layer
 #define LNV 4   //nav_layer
 #define LDA 5   //dia_layer
-#define LFN 6   //function_layer
-#define LAD 7   //adjust_layer
+#define LDU 6   //dia_layer
+#define LFN 7   //function_layer
+#define LAD 8   //adjust_layer
 
 /* Global settings */
 
@@ -109,11 +110,41 @@
             key-positions = <19 29>;
             layers = <LDA>;
         };
+        
+        uu_caret {
+            bindings = <&cmpu CARET U>;
+            key-positions = <15 25>;
+            layers = <LDU>;
+        };
+
+        ou_caret {
+            bindings = <&cmpu CARET O>;
+            key-positions = <16 26>;
+            layers = <LDU>;
+        };
+
+        eu_caret {
+            bindings = <&cmpu CARET E>;
+            key-positions = <17 27>;
+            layers = <LDU>;
+        };
+
+        au_caret {
+            bindings = <&cmpu CARET A>;
+            key-positions = <18 28>;
+            layers = <LDU>;
+        };
+
+        iu_caret {
+            bindings = <&cmpu CARET I>;
+            key-positions = <19 29>;
+            layers = <LDU>;
+        };
 
         Semicolon {
             bindings = <&kp SEMI>;
             key-positions = <27 28>;
-            layers = <1 2>;
+            layers = <LRC LSM>;
         };
 
         exclaim {
@@ -177,6 +208,13 @@
             #binding-cells = <2>;
             bindings = <&kp RALT &macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>;
             label = "COMP";
+        };
+        
+        cmpu: compup {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&kp RALT &macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_press &kp LSHFT &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_release &kp LSHFT>;
+            label = "COMPUP";
         };
 
         isnot: isnot {
@@ -256,10 +294,10 @@
 
         nav_layer {
             bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(D))  &kp LC(LG(F4))  &kp LC(LG(RIGHT))  &kp LS(LC(ESC))    &kp LG(V)    &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)
-&kp LWIN          &kp LALT       &kp LCTRL       &kp LSHIFT         &kp PSCRN          &kp LC(A)    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
-&kp LC(E)         &kp LC(H)      &kp LS(F10)     &easynew           &easyclose         &kp LG(TAB)  &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
-                                                 &trans             &trans             &trans       &trans
+&kp LC(LG(LEFT))  &kp LC(LG(D))  &kp LC(LG(F4))  &kp LC(LG(RIGHT))  &kp LS(LC(ESC))    &kp LC(E)    &kp LC(H)  &kp LS(F10)   &easynew   &easyclose
+&kp LWIN          &kp LALT       &kp LCTRL       &kp LSHIFT         &kp LS(A)          &kp PSCRN    &kp LEFT   &kp DOWN      &kp UP     &kp RIGHT
+&kp LC(Z)         &kp LC(X)      &kp LC(C)       &kp LC(V)          &kp LG(V)          &kp LG(TAB)  &kp HOME   &kp PG_DN     &kp PG_UP  &kp END
+                                              &trans             &trans             &trans       &trans
             >;
 
             label = "nav";
@@ -268,8 +306,17 @@
         dia_layer {
             bindings = <
 &smile LPAR  &smile PIPE  &smile RPAR  &cmp EQUAL E  &none     &cmp GRAVE U  &cmp GRAVE O  &cmp GRAVE E  &cmp GRAVE A  &cmp GRAVE I
-&cmp S S     &none        &none        &kp LSHFT     &none     &cmp DQT U    &cmp DQT O    &cmp DQT E    &cmp DQT A    &cmp DQT I
+&cmp S S     &none        &none        &mo LDU       &none     &cmp DQT U    &cmp DQT O    &cmp DQT E    &cmp DQT A    &cmp DQT I
 &none        &none        &none        &none         &none     &cmp SQT U    &cmp SQT O    &cmp SQT E    &cmp SQT A    &cmp SQT I
+                                       &trans        &trans    &trans        &trans
+            >;
+        };
+
+        diaup_layer {
+            bindings = <
+&trans       &trans       &trans       &trans        &trans    &cmpu GRAVE U  &cmpu GRAVE O  &cmpu GRAVE E  &cmpu GRAVE A  &cmpu GRAVE I
+&trans       &trans       &trans       &trans        &trans    &cmpu DQT U    &cmpu DQT O    &cmpu DQT E    &cmpu DQT A    &cmpu DQT I
+&trans       &trans       &trans       &trans        &trans    &cmpu SQT U    &cmpu SQT O    &cmpu SQT E    &cmpu SQT A    &cmpu SQT I
                                        &trans        &trans    &trans        &trans
             >;
         };
@@ -286,7 +333,7 @@
         adjust_layer {
             bindings = <
 &bootloader   &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR        &none  &none  &none  &none  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none  &to 0  &to 1  &to 2  &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none  &to LRC  &to LSM  &to LQW  &none
 &trans        &none         &none         &none         &bt BT_CLR_ALL    &none  &none  &none  &none  &trans
                                           &none         &none             &none  &none
             >;
