@@ -10,10 +10,10 @@
 #define LSM 1   //semimak_layer
 #define LQW 2   //qwerty_layer
 #define LSY 3   //sym_layer
-#define LNV 4   //nav_layer
-#define LDA 5   //dia_layer
-#define LDU 6   //dia_layer
-#define LFN 7   //function_layer
+#define LDA 4   //dia_layer
+#define LDU 5   //diaup_layer
+#define LFN 6   //function_layer
+#define LNV 7   //nav_layer
 #define LAD 8   //adjust_layer
 
 /* Global settings */
@@ -225,9 +225,9 @@
         };
 
         grave {
-            bindings = <&kp GRAVE>
-            key-positions = <LT4 LT3>
-            layers = <LRC LSM LQW LSY>
+            bindings = <&kp GRAVE>;
+            key-positions = <LT4 LT3>;
+            layers = <LRC LSM LQW LSY>;
         };
     };
 
@@ -335,30 +335,21 @@
 
         sym_layer {
             bindings = <
-&kp  LS(PRCNT)  &kp  LS(PLUS)  &kp  MINUS     &kp  LS(DLLR)     &kp LS(LBRC)    &kp LS(RBRC)  &kp N7  &kp N8  &kp N9  &kp LS(AT)
-&hml LWIN EXCL  &hml LALT LT   &hml LCTRL GT  &hml LSHFT EQUAL  &kp LS(LPAR)    &kp LS(RPAR)  &kp N1  &kp N2  &kp N3  &kp N0
-&kp  LS(CARET)  &kp  LS(STAR)  &kp  FSLH      &kp  LS(UNDER)    &kp LBKT        &kp RBKT      &kp N4  &kp N5  &kp N6  &kp DOT
+&kp  LS(PRCNT)      &kp  LS(PLUS)  &kp  MINUS     &kp  LS(DLLR)     &kp LS(LBRC)    &kp LS(RBRC)  &kp N7  &kp N8  &kp N9  &kp LS(AT)
+&hml LWIN EXCL      &hml LALT LT   &hml LCTRL GT  &hml LSHFT EQUAL  &kp LS(LPAR)    &kp LS(RPAR)  &kp N1  &kp N2  &kp N3  &kp N0
+&lt  LAD LS(CARET)  &kp  LS(STAR)  &kp  FSLH      &kp  LS(UNDER)    &kp LBKT        &kp RBKT      &kp N4  &kp N5  &kp N6  &kp DOT
                                               &trans            &trans          &trans        &trans
             >;
         };
 
-        nav_layer {
-            bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(D))  &kp LC(LG(F4))  &kp LC(LG(RIGHT))  &kp LS(LC(ESC))    &kp LC(E)    &kp LC(H)  &kp LS(F10)   &easynew   &easyclose
-&kp LWIN          &kp LALT       &kp LCTRL       &kp LSHIFT         &kp LC(A)          &kp PSCRN    &kp LEFT   &kp DOWN      &kp UP     &kp RIGHT
-&kp LC(Z)         &kp LC(X)      &kp LC(C)       &kp LC(V)          &kp LG(V)          &kp LG(TAB)  &kp HOME   &kp PG_DN     &kp PG_UP  &kp END
-                                              &trans             &trans             &trans       &trans
-            >;
 
-            label = "nav";
-        };
 
         dia_layer {
             bindings = <
 &smile LPAR  &smile PIPE  &smile RPAR  &cmp EQUAL E  &none     &cmp GRAVE U  &cmp GRAVE O  &cmp GRAVE E  &cmp GRAVE A  &cmp GRAVE I
 &cmp S S     &none        &none        &mo LDU       &none     &cmp DQT U    &cmp DQT O    &cmp DQT E    &cmp DQT A    &cmp DQT I
-&none        &none        &none        &none         &none     &cmp SQT U    &cmp SQT O    &cmp SQT E    &cmp SQT A    &cmp SQT I
-                                       &trans        &trans    &trans        &trans
+&mo  LAD     &none        &none        &none         &none     &cmp SQT U    &cmp SQT O    &cmp SQT E    &cmp SQT A    &cmp SQT I
+                                       &trans        &tog LDA  &trans        &trans
             >;
         };
 
@@ -375,17 +366,28 @@
             bindings = <
 &none     &none     &none      &caps_word  &kp CAPS    &none    &kp F9  &kp F10  &kp F11  &kp F12
 &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp SLCK    &kp INS  &kp F5  &kp F6   &kp F7   &kp F8
-&to LAD   &none     &none      &none       &none       &none    &kp F1  &kp F2   &kp F3   &kp F4
+&mo LAD   &none     &none      &none       &none       &none    &kp F1  &kp F2   &kp F3   &kp F4
                                &trans      &trans      &trans   &trans
             >;
         };
 
+        nav_layer {
+            bindings = <
+&kp LC(LG(LEFT))  &kp LC(LG(D))  &kp LC(LG(F4))  &kp LC(LG(RIGHT))  &kp LS(LC(ESC))    &kp LC(E)    &kp LC(H)  &kp LS(F10)   &easynew   &easyclose
+&kp LWIN          &kp LALT       &kp LCTRL       &kp LSHIFT         &kp LC(A)          &kp PSCRN    &kp LEFT   &kp DOWN      &kp UP     &kp RIGHT
+&lt LAD LC(Z)     &kp LC(X)      &kp LC(C)       &kp LC(V)          &kp LG(V)          &kp LG(TAB)  &kp HOME   &kp PG_DN     &kp PG_UP  &kp END
+                                              &trans             &trans             &trans       &trans
+            >;
+
+            label = "nav";
+        };
+
         adjust_layer {
             bindings = <
-&bootloader   &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR        &none  &none  &none  &none  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none  &to LRC  &to LSM  &to LQW  &none
-&trans        &none         &none         &none         &bt BT_CLR_ALL    &none  &none  &none  &none  &trans
-                                          &none         &none             &none  &none
+&bootloader   &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR        &none     &none  &none  &none  &bootloader
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none     &to LRC  &to LSM  &to LQW  &none
+&trans        &none         &none         &none         &bt BT_CLR_ALL    &none     &none  &none  &none  &trans
+                                          &tog LNV      &tog LDA          &tog LFN  &tog LSY
             >;
         };
     };
