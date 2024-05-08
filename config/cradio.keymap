@@ -223,6 +223,12 @@
             key-positions = <RM0 RM1>;
             layers = <LSY>;
         };
+
+        grave {
+            bindings = <&kp GRAVE>
+            key-positions = <LT4 LT3>
+            layers = <LRC LSM LQW LSY>
+        }
     };
 
     macros {
