@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include "keypos.h"
 
-#define LRC 0   //recurva_layer
-#define LSM 1   //semimak_layer
+#define LRC 1   //recurva_layer
+#define LSM 0   //semimak_layer
 #define LQW 2   //qwerty_layer
 #define LSY 3   //sym_layer
 #define LDA 4   //dia_layer
@@ -275,29 +275,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        recurva_layer {
-            /* Recurva colstag 1 
- *
- * ,----------------------------------.                      ,----------------------------------.
- * |   F  |   R  |   D  |   P  |   V  |                      |   Q  |   M  |   U  |   O  |   Y  |
- * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   S  |   N  |   T  |   C  |   B  |                      |   .  |   H  |   E  |   A  |   I  |
- * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   Z  |   X  |   K  |   G  |   W  |                      |   J  |   L  |   ;  |   '  |   ,  |
- * `----------------------------------'                      `----------------------------------'
- *                      ,--------------.                     ,------------.  
- *                      | SPACE | TAB  |                     | ENTER | BS |  
- *                      `--------------'                     `------------'  
- */
-
-            bindings = <
-&kp  F       &kp  R       &kp D         &kp P         &kp V          &kp Q       &kp  M        &kp  U        &kp  O       &kp  Y
-&hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT C  &kp B          &kp DOT     &hmr RSHFT H  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
-&lt  LAD Z   &kp  X       &kp K         &kp G         &kp W          &kp J       &kp  L        &kp  SEMI     &kp  SQT     &kp  COMMA
-                                     &lt LNV SPACE    &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
-            >;
-        };
-
         semimak_layer {
             /* Semimak JQZ
  *
@@ -317,6 +294,29 @@
 &kp  F       &kp  L       &kp  H        &kp  V        &kp X          &kp SQT     &kp  W        &kp  U        &kp  O       &kp  Y
 &hml LGUI S  &hml LALT R  &hml LCTRL N  &hml LSHFT T  &kp K          &kp C       &hmr RSHFT D  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
 &lt LAD Z    &kp  J       &kp  B        &kp  M        &kp Q          &kp P       &kp  G        &kp  COMMA    &kp  DOT     &kp  FSLH
+                                     &lt LNV SPACE    &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
+            >;
+        };
+
+                recurva_layer {
+            /* Recurva colstag 1 
+ *
+ * ,----------------------------------.                      ,----------------------------------.
+ * |   F  |   R  |   D  |   P  |   V  |                      |   Q  |   M  |   U  |   O  |   Y  |
+ * |------+------+------+------+------|                      |------+------+------+------+------|
+ * |   S  |   N  |   T  |   C  |   B  |                      |   .  |   H  |   E  |   A  |   I  |
+ * |------+------+------+------+------|                      |------+------+------+------+------|
+ * |   Z  |   X  |   K  |   G  |   W  |                      |   J  |   L  |   ;  |   '  |   ,  |
+ * `----------------------------------'                      `----------------------------------'
+ *                      ,--------------.                     ,------------.  
+ *                      | SPACE | TAB  |                     | ENTER | BS |  
+ *                      `--------------'                     `------------'  
+ */
+
+            bindings = <
+&kp  F       &kp  R       &kp D         &kp P         &kp V          &kp Q       &kp  M        &kp  U        &kp  O       &kp  Y
+&hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT C  &kp B          &kp DOT     &hmr RSHFT H  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
+&lt  LAD Z   &kp  X       &kp K         &kp G         &kp W          &kp J       &kp  L        &kp  SEMI     &kp  SQT     &kp  COMMA
                                      &lt LNV SPACE    &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
             >;
         };
