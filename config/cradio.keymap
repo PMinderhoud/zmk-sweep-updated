@@ -72,7 +72,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QU";
             #binding-cells = <0>;
-            bindings = <&Qu>, <&kp Q>;
+            bindings = <&QuMacro>, <&kp Q>;
         };
     };
 
@@ -349,14 +349,14 @@
             label = "ZEROZEROZERO";
         };
 
-        Qu: Qu {
+        QuMacro: Qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&kp Q>,
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp U>;
 
             label = "QU";
