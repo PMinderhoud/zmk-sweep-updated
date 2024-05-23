@@ -354,8 +354,16 @@
         qumacro: QuMacro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp Q &kp U>;
+            bindings =
+                <&kp Q>,
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_tap>,
+                <&kp U>;
+
             label = "QUMacro";
+            wait-ms = <10>;
+            tap-ms = <10>;
         };
     };
 
