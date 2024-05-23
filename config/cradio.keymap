@@ -384,7 +384,7 @@
             bindings = <
 &kp F        &kp L        &kp H         &kp V          &kp X          &kp SQT        &kp W         &kp U         &kp O        &kp Y
 &hml LGUI S  &hml LALT R  &hml LCTRL N  &hml LSHFT T   &kp K          &kp C          &hmr RSHFT D  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
-&lt LAD Z    &kp J        &kp B         &kp M          &qu            &kp P          &kp G         &kp COMMA     &kp DOT      &kp FSLH
+&lt LAD Z    &kp J        &kp B         &kp M          &QuMacro       &kp P          &kp G         &kp COMMA     &kp DOT      &kp FSLH
                                         &lt LNV SPACE  &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
             >;
         };
