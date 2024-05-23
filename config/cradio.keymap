@@ -72,7 +72,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QUTAP";
             #binding-cells = <0>;
-            bindings = <&QuMacro>, <&kp Q>;
+            bindings = <&qumacro>, <&kp Q>;
 
             tapping-term-ms = <200>;
         };
@@ -351,11 +351,11 @@
             label = "ZEROZEROZERO";
         };
 
-        QuMacro: Qu {
+        qumacro: QuMacro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp Q &kp U>;
-            label = "QU";
+            label = "QUMacro";
         };
     };
 
@@ -410,7 +410,7 @@
 
         qwerty_layer {
             bindings = <
-&QuMacro     &kp W        &kp E         &kp R          &kp T          &kp Y          &kp U         &kp I         &kp O        &kp P
+&qumacro     &kp W        &kp E         &kp R          &kp T          &kp Y          &kp U         &kp I         &kp O        &kp P
 &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F   &kp G          &kp H          &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI
 &lt LAD Z    &kp X        &kp C         &kp V          &kp B          &kp N          &kp M         &kp COMMA     &kp DOT      &kp FSLH
                                         &lt LNV SPACE  &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
