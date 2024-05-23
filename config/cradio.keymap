@@ -254,7 +254,7 @@
 
         LeftBrac {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <LM1 LT1>;
+            key-positions = <LT1 LM1>;
             layers = <LRC LSM LQW LSY>;
         };
 
