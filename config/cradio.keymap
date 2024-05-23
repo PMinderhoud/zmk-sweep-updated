@@ -263,6 +263,18 @@
             key-positions = <RM1 RT1>;
             layers = <LRC LSM LQW LSY>;
         };
+
+        ZeroZero {
+            bindings = <&zerozero>;
+            key-positions = <RM3 RM4>;
+            layers = <LSY>;
+        };
+
+        ZeroZeroZero {
+            bindings = <&zerozerozero>;
+            key-positions = <RM2 RM3 RM4>;
+            layers = <LSY>;
+        };
     };
 
     macros {
@@ -314,6 +326,20 @@
             #binding-cells = <0>;
             bindings = <&lambda &kp LBRC &kp ENTER>;
             label = "LAMBDABLK";
+        };
+
+        zerozero: zerozero {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N0 &kp N0>;
+            label = "ZEROZERO";
+        };
+
+        zerozerozero: zerozerozero {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N0 &kp N0 &kp N0>;
+            label = "ZEROZEROZERO";
         };
     };
 
