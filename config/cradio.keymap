@@ -317,7 +317,7 @@
         isnot: isnot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp SPACE &kp I &kp S &kp SPACE &kp N &kp O &kp T &kp SPACE>;
+            bindings = <&kp SPACE &kp I &kp S &kp SPACE &kp N &kp O &kp T &kp SPACE>;
             label = "ISNOT";
         };
 
@@ -352,13 +352,7 @@
         QuMacro: Qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp Q>,
-                <&macro_release>,
-                <&kp LSHFT &kp RSHFT>,
-                <&macro_tap>,
-                <&kp U>;
-
+            bindings = <&kp Q &kp U>;
             label = "QU";
         };
     };
@@ -384,7 +378,7 @@
             bindings = <
 &kp F        &kp L        &kp H         &kp V          &kp X          &kp SQT        &kp W         &kp U         &kp O        &kp Y
 &hml LGUI S  &hml LALT R  &hml LCTRL N  &hml LSHFT T   &kp K          &kp C          &hmr RSHFT D  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
-&lt LAD Z    &kp J        &kp B         &kp M          &QuMacro       &kp P          &kp G         &kp COMMA     &kp DOT      &kp FSLH
+&lt LAD Z    &kp J        &kp B         &kp M          &qu            &kp P          &kp G         &kp COMMA     &kp DOT      &kp FSLH
                                         &lt LNV SPACE  &lt LDA TAB    &lt LFN ENTER  &lt LSY BSPC
             >;
         };
