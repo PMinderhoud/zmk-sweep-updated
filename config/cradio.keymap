@@ -407,10 +407,10 @@
 
         dusk_opt_layer {
             bindings = <
-&kp Z        &kp P        &kp D         &kp W         &kp Q       &kp SLASH  &kp J         &kp O          &kp U        &kp DOT
-&hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT C  &kp Y       &kp M      &hmr RSHFT H  &hmr RCTRL A   &hmr RALT E  &hmr RGUI I
-&lt 9 F      &kp B        &kp K         &kp G         &kp V       &kp X      &kp L         &kp SEMICOLON  &kp SQT      &kp COMMA
-                                        &kp R         &kp BSPC    &kp TAB    &kp SPACE
+&kp Z        &kp P        &kp D         &kp W         &kp Q              &kp SLASH  &kp J         &kp O          &kp U        &kp DOT
+&hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT C  &kp Y              &kp M      &hmr RSHFT H  &hmr RCTRL A   &hmr RALT E  &hmr RGUI I
+&lt 9 F      &kp B        &kp K         &kp G         &kp V              &kp X      &kp L         &kp SEMICOLON  &kp SQT      &kp COMMA
+                                        &lt 8 R       &lt 5 BACKSPACE    &lt 7 TAB  &lt 4 SPACE
             >;
         };
 
