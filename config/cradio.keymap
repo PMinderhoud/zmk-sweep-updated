@@ -361,6 +361,13 @@
             wait-ms = <10>;
             tap-ms = <10>;
         };
+
+        ctrlk: ctrlk {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&kp LC(K) &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "CTRLK";
+        };
     };
 
     keymap {
@@ -485,6 +492,15 @@
                                           &trans        &trans            &trans  &trans
             >;
         };
+
+        Coding {
+            bindings = <
+&kp LA(LS(F))  &kp LS(F8)   &kp F9         &kp F5        &kp LS(F5)     &trans     &kp LC(P)      &kp F12      &kp LA(F12)        &trans
+&kp LC(LS(F))  &kp F8       &kp F11        &kp F10       &kp LS(F11)    &kp LC(T)  &kp LC(LS(P))  &kp LC(F12)  &kp LC(LS(SPACE))  &trans
+&kp Z          &kp LC(DOT)  &kp LC(SPACE)  &kp LA(FSLH)  &trans         &trans     &kp LC(G)      &kp LS(F12)  &trans             &trans
+                                           &trans        &trans         &trans     &trans
+            >;
+        };
     };
 
     conditional_layers {
@@ -493,6 +509,11 @@
         adjustlayer {
             if-layers = <4 8>;
             then-layer = <9>;
+        };
+
+        Codinglayer {
+            if-layers = <8 7>;
+            then-layer = <10>;
         };
     };
 };
