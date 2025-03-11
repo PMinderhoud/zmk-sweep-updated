@@ -523,13 +523,13 @@
         compatible = "zmk,conditional-layers";
 
         adjustlayer {
-            if-layers = <4 7>;
-            then-layer = <4>;
+            if-layers = <8 7>;
+            then-layer = <11>;
         };
 
         dialayer {
-            if-layers = <4 5>;
-            then-layer = <4>;
+            if-layers = <8 5>;
+            then-layer = <9>;
         };
     };
 };
