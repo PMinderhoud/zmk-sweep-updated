@@ -230,44 +230,16 @@
             key-positions = <LT4 LT3 0 1>;
         };
 
-        LeftBrace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <LM3 LT3>;
-        };
-
-        RightBrace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <RM3 RT3>;
-        };
-
-        LeftPar {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <LM2 LT2>;
-        };
-
-        RightPar {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <RM2 RT2>;
-        };
-
-        LeftBrac {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <LT1 LM1>;
-        };
-
-        RightBrac {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <RM1 RT1>;
-        };
-
         ZeroZero {
             bindings = <&zerozero>;
-            key-positions = <RM3 RM4>;
+            key-positions = <RM3 RM4 19 18>;
+            layers = <5>;
         };
 
         ZeroZeroZero {
             bindings = <&zerozerozero>;
-            key-positions = <RM2 RM3 RM4>;
+            key-positions = <RM2 RM3 RM4 19 18 17>;
+            layers = <5>;
         };
 
         entercombo {
@@ -465,10 +437,10 @@
 
         function_layer {
             bindings = <
-&none     &none     &kp CAPS   &caps_word  &trans      &kp INS  &kp F9  &kp F10  &kp F11  &kp F12
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp SLCK    &kp DEL  &kp F5  &kp F6   &kp F7   &kp F8
-&none     &none     &none      &none       &none       &none    &kp F1  &kp F2   &kp F3   &kp F4
-                               &trans      &trans      &trans   &trans
+&none     &none     &kp CAPS   &caps_word  &trans      &kp INS        &kp F9  &kp F10  &kp F11  &kp F12
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT   &kp SLCK    &kp DEL        &kp F5  &kp F6   &kp F7   &kp F8
+&none     &none     &none      &none       &none       &kp LC(LS(M))  &kp F1  &kp F2   &kp F3   &kp F4
+                               &trans      &trans      &trans         &trans
             >;
         };
 
@@ -486,7 +458,7 @@
 &kp LC(LG(LEFT))  &kp LC(LG(D))  &kp LC(LG(F4))  &kp LC(LG(RIGHT))  &kp LS(LC(ESC))    &kp LC(E)    &kp LC(LEFT)  &kp LS(F10)  &easyclose  &kp LC(RIGHT)
 &kp LWIN          &kp LALT       &kp LCTRL       &kp LSHIFT         &kp LC(A)          &kp PSCRN    &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT
 &lt 1 LC(Z)       &kp LC(X)      &kp LC(C)       &kp LC(V)          &kp LG(V)          &kp LG(TAB)  &kp HOME      &kp PG_DN    &kp PG_UP   &kp END
-                                                 &trans             &trans             &trans       &trans
+                                                 &trans             &trans             &kp ENTER    &trans
             >;
 
             label = "nav";
