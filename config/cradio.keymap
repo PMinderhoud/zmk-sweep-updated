@@ -159,37 +159,35 @@
 
         dquot {
             bindings = <&kp DQT>;
-            key-positions = <RB2 RB3>;
-        };
-
-        dquot_alt {
-            bindings = <&kp DQT>;
-            key-positions = <RT0 RT1>;
+            key-positions = <RB2 RB3 27 28>;
+            layers = <0 2 1>;
         };
 
         question {
             bindings = <&kp QUESTION>;
-            key-positions = <LB1 LB2>;
+            key-positions = <LB1 LB2 23 22>;
+            layers = <0 2 3 1>;
         };
 
         colon {
             bindings = <&kp COLON>;
-            key-positions = <LB2 LB3>;
+            key-positions = <LB2 LB3 21 22>;
+            layers = <0 2 1>;
         };
 
         slash {
             bindings = <&kp SLASH>;
-            key-positions = <LB4 LB3>;
+            key-positions = <LB4 LB3 20 21>;
         };
 
         backslash {
             bindings = <&kp BSLH>;
-            key-positions = <RB4 RB3>;
+            key-positions = <RB4 RB3 28 29>;
         };
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <LH1 LH0>;
+            key-positions = <LH1 LH0 31 32>;
         };
 
         delete {
@@ -199,17 +197,20 @@
 
         isnot {
             bindings = <&isnot>;
-            key-positions = <LM4 LM1>;
+            key-positions = <LM4 LM1 10 13>;
+            layers = <5>;
         };
 
         lambda {
             bindings = <&lambda>;
-            key-positions = <LM1 LM2>;
+            key-positions = <LM1 LM2 13 12>;
+            layers = <5>;
         };
 
         lambdablk {
             bindings = <&lambdablk>;
-            key-positions = <LM1 LM2 LM3>;
+            key-positions = <LM1 LM2 LM3 13 12 11>;
+            layers = <5>;
         };
 
         ampersand {
