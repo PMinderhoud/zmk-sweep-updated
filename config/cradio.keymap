@@ -83,67 +83,67 @@
 
         combo_caps {
             timeout-ms = <50>;
-            key-positions = <LM1 RM1 13 16>;
+            key-positions = <13 16>;
             bindings = <&caps_word>;
         };
 
         u_caret {
             bindings = <&cmp CARET U>;
-            key-positions = <RM0 RB0 5 15>;
+            key-positions = <5 15>;
             layers = <4>;
         };
 
         o_caret {
             bindings = <&cmp CARET O>;
-            key-positions = <RM1 RB1 6 16>;
+            key-positions = <6 16>;
             layers = <4>;
         };
 
         e_caret {
             bindings = <&cmp CARET E>;
-            key-positions = <RM2 RB2 7 17>;
+            key-positions = <7 17>;
             layers = <4>;
         };
 
         a_caret {
             bindings = <&cmp CARET A>;
-            key-positions = <RM3 RB3 8 18>;
+            key-positions = <8 18>;
             layers = <4>;
         };
 
         i_caret {
             bindings = <&cmp CARET I>;
-            key-positions = <RM4 RB4 9 19>;
+            key-positions = <9 19>;
             layers = <4>;
         };
 
         uu_caret {
             bindings = <&cmpu CARET U>;
-            key-positions = <RM0 RB0 5 15>;
+            key-positions = <5 15>;
             layers = <11>;
         };
 
         ou_caret {
             bindings = <&cmpu CARET O>;
-            key-positions = <RM1 RB1 6 16>;
+            key-positions = <6 16>;
             layers = <11>;
         };
 
         eu_caret {
             bindings = <&cmpu CARET E>;
-            key-positions = <RM2 RB2 7 17>;
+            key-positions = <7 17>;
             layers = <11>;
         };
 
         au_caret {
             bindings = <&cmpu CARET A>;
-            key-positions = <RM3 RB3 8 18>;
+            key-positions = <8 18>;
             layers = <11>;
         };
 
         iu_caret {
             bindings = <&cmpu CARET I>;
-            key-positions = <RM4 RB4 9 19>;
+            key-positions = <9 19>;
             layers = <11>;
         };
 
@@ -155,94 +155,94 @@
 
         exclaim {
             bindings = <&kp EXCL>;
-            key-positions = <RB1 RB2 26 27>;
+            key-positions = <26 27>;
             layers = <0 1 2 3>;
         };
 
         dquot {
             bindings = <&kp DQT>;
-            key-positions = <RB2 RB3 27 28>;
+            key-positions = <27 28>;
             layers = <0 2>;
         };
 
         question {
             bindings = <&kp QUESTION>;
-            key-positions = <LB1 LB2 23 22>;
+            key-positions = <23 22>;
             layers = <0 2 3 1>;
         };
 
         colon {
             bindings = <&kp COLON>;
-            key-positions = <LB2 LB3 21 22>;
+            key-positions = <21 22>;
             layers = <0 2 1>;
         };
 
         slash {
             bindings = <&kp SLASH>;
-            key-positions = <LB4 LB3 20 21>;
+            key-positions = <20 21>;
             layers = <0 2 1 5>;
         };
 
         backslash {
             bindings = <&kp BSLH>;
-            key-positions = <RB4 RB3 28 29>;
+            key-positions = <28 29>;
             layers = <0 1 2 3 5>;
         };
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <LH1 LH0 31 32>;
+            key-positions = <31 32>;
         };
 
         delete {
             bindings = <&kp DEL>;
-            key-positions = <RH0 RH1 32 33>;
+            key-positions = <32 33>;
         };
 
         isnot {
             bindings = <&isnot>;
-            key-positions = <LM4 LM1 10 13>;
+            key-positions = <10 13>;
             layers = <5>;
         };
 
         lambda {
             bindings = <&lambda>;
-            key-positions = <LM1 LM2 13 12>;
+            key-positions = <13 12>;
             layers = <5>;
         };
 
         lambdablk {
             bindings = <&lambdablk>;
-            key-positions = <LM1 LM2 LM3 13 12 11>;
+            key-positions = <13 12 11>;
             layers = <5>;
         };
 
         ampersand {
             bindings = <&kp AMPS>;
-            key-positions = <LM0 LM1 6 16>;
+            key-positions = <6 16>;
             layers = <5>;
         };
 
         pipe {
             bindings = <&kp PIPE>;
-            key-positions = <RM0 RM1 7 17>;
+            key-positions = <7 17>;
             layers = <5>;
         };
 
         grave {
             bindings = <&kp GRAVE>;
-            key-positions = <LT4 LT3 0 1>;
+            key-positions = <0 1>;
         };
 
         ZeroZero {
             bindings = <&zerozero>;
-            key-positions = <RM3 RM4 19 18>;
+            key-positions = <19 18>;
             layers = <5>;
         };
 
         ZeroZeroZero {
             bindings = <&zerozerozero>;
-            key-positions = <RM2 RM3 RM4 19 18 17>;
+            key-positions = <19 18 17>;
             layers = <5>;
         };
 
