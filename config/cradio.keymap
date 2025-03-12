@@ -85,66 +85,67 @@
             timeout-ms = <50>;
             key-positions = <13 16>;
             bindings = <&caps_word>;
+            layers = <0 1 2 3>;
         };
 
         u_caret {
             bindings = <&cmp CARET U>;
             key-positions = <5 15>;
-            layers = <4>;
+            layers = <9>;
         };
 
         o_caret {
             bindings = <&cmp CARET O>;
             key-positions = <6 16>;
-            layers = <4>;
+            layers = <9>;
         };
 
         e_caret {
             bindings = <&cmp CARET E>;
             key-positions = <7 17>;
-            layers = <4>;
+            layers = <9>;
         };
 
         a_caret {
             bindings = <&cmp CARET A>;
             key-positions = <8 18>;
-            layers = <4>;
+            layers = <9>;
         };
 
         i_caret {
             bindings = <&cmp CARET I>;
             key-positions = <9 19>;
-            layers = <4>;
+            layers = <9>;
         };
 
         uu_caret {
             bindings = <&cmpu CARET U>;
             key-positions = <5 15>;
-            layers = <11>;
+            layers = <10>;
         };
 
         ou_caret {
             bindings = <&cmpu CARET O>;
             key-positions = <6 16>;
-            layers = <11>;
+            layers = <10>;
         };
 
         eu_caret {
             bindings = <&cmpu CARET E>;
             key-positions = <7 17>;
-            layers = <11>;
+            layers = <10>;
         };
 
         au_caret {
             bindings = <&cmpu CARET A>;
             key-positions = <8 18>;
-            layers = <11>;
+            layers = <10>;
         };
 
         iu_caret {
             bindings = <&cmpu CARET I>;
             key-positions = <9 19>;
-            layers = <11>;
+            layers = <10>;
         };
 
         Semicolon {
@@ -477,7 +478,7 @@
         dia_layer {
             bindings = <
 &smile LPAR  &smile PIPE  &smile RPAR  &cmp EQUAL E  &none     &cmp GRAVE U  &cmp GRAVE O  &cmp GRAVE E  &cmp GRAVE A  &cmp GRAVE I
-&cmp S S     &none        &none        &mo 11        &none     &cmp DQT U    &cmp DQT O    &cmp DQT E    &cmp DQT A    &cmp DQT I
+&cmp S S     &none        &none        &mo 10        &none     &cmp DQT U    &cmp DQT O    &cmp DQT E    &cmp DQT A    &cmp DQT I
 &none        &none        &none        &none         &none     &cmp SQT U    &cmp SQT O    &cmp SQT E    &cmp SQT A    &cmp SQT I
                                        &trans        &trans    &trans        &trans
             >;
