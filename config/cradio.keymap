@@ -85,7 +85,7 @@
             timeout-ms = <50>;
             key-positions = <13 16>;
             bindings = <&caps_word>;
-            layers = <0 1 2 3>;
+            layers = <1 2 0 3>;
         };
 
         u_caret {
@@ -151,43 +151,43 @@
         Semicolon {
             bindings = <&kp SEMI>;
             key-positions = <27 28>;
-            layers = <1>;
+            layers = <2>;
         };
 
         exclaim {
             bindings = <&kp EXCL>;
             key-positions = <26 27>;
-            layers = <0 1 2 3>;
+            layers = <1 2 0 3>;
         };
 
         dquot {
             bindings = <&kp DQT>;
             key-positions = <27 28>;
-            layers = <0 2>;
+            layers = <1 0>;
         };
 
         question {
             bindings = <&kp QUESTION>;
             key-positions = <23 22>;
-            layers = <0 2 3 1>;
+            layers = <1 0 3 2>;
         };
 
         colon {
             bindings = <&kp COLON>;
             key-positions = <21 22>;
-            layers = <0 2 1>;
+            layers = <1 0 2>;
         };
 
         slash {
             bindings = <&kp SLASH>;
             key-positions = <20 21>;
-            layers = <0 2 1 5>;
+            layers = <1 0 2 5>;
         };
 
         backslash {
             bindings = <&kp BSLH>;
             key-positions = <28 29>;
-            layers = <0 1 2 3 5>;
+            layers = <1 2 0 3 5>;
         };
 
         escape {
@@ -250,7 +250,7 @@
         entercombo {
             bindings = <&kp ENTER>;
             key-positions = <29 19>;
-            layers = <0>;
+            layers = <1>;
         };
 
         hashcombo {
@@ -364,6 +364,29 @@
     keymap {
         compatible = "zmk,keymap";
 
+        recurva_layer {
+            /* Recurva colstag 1 
+ *
+ * ,----------------------------------.                      ,----------------------------------.
+ * |   F  |   R  |   D  |   P  |   V  |                      |   Q  |   M  |   U  |   O  |   Y  |
+ * |------+------+------+------+------|                      |------+------+------+------+------|
+ * |   S  |   N  |   T  |   C  |   B  |                      |   .  |   H  |   E  |   A  |   I  |
+ * |------+------+------+------+------|                      |------+------+------+------+------|
+ * |   Z  |   X  |   K  |   G  |   W  |                      |   J  |   L  |   ;  |   '  |   ,  |
+ * `----------------------------------'                      `----------------------------------'
+ *                      ,--------------.                     ,------------.  
+ *                      | SPACE | TAB  |                     | ENTER | BS |  
+ *                      `--------------'                     `------------'  
+ */
+
+            bindings = <
+&kp F        &kp R        &kp D         &kp P         &kp V        &qutap       &kp M         &kp U         &kp O        &kp Y
+&hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT C  &kp B        &kp DOT      &hmr RSHFT H  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
+&lt 4 Z      &kp X        &kp K         &kp G         &kp W        &kp J        &kp L         &kp SEMI      &kp SQT      &kp COMMA
+                                        &lt 8 SPACE   &lt 6 TAB    &lt 7 ENTER  &lt 5 BSPC
+            >;
+        };
+
         Night {
             bindings = <
 &kp B        &kp F        &kp L         &kp K         &qutap       &kp P       &kp G         &kp O         &kp U        &kp DOT
@@ -392,29 +415,6 @@
 &kp F        &kp L        &kp H         &kp V         &kp X        &kp SQT      &kp W         &kp U         &kp O        &kp Y
 &hml LGUI S  &hml LALT R  &hml LCTRL N  &hml LSHFT T  &kp K        &kp C        &hmr RSHFT D  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
 &kp Z        &kp J        &kp B         &kp M         &qutap       &kp P        &kp G         &kp COMMA     &kp DOT      &kp FSLH
-                                        &lt 8 SPACE   &lt 6 TAB    &lt 7 ENTER  &lt 5 BSPC
-            >;
-        };
-
-        recurva_layer {
-            /* Recurva colstag 1 
- *
- * ,----------------------------------.                      ,----------------------------------.
- * |   F  |   R  |   D  |   P  |   V  |                      |   Q  |   M  |   U  |   O  |   Y  |
- * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   S  |   N  |   T  |   C  |   B  |                      |   .  |   H  |   E  |   A  |   I  |
- * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   Z  |   X  |   K  |   G  |   W  |                      |   J  |   L  |   ;  |   '  |   ,  |
- * `----------------------------------'                      `----------------------------------'
- *                      ,--------------.                     ,------------.  
- *                      | SPACE | TAB  |                     | ENTER | BS |  
- *                      `--------------'                     `------------'  
- */
-
-            bindings = <
-&kp F        &kp R        &kp D         &kp P         &kp V        &qutap       &kp M         &kp U         &kp O        &kp Y
-&hml LGUI S  &hml LALT N  &hml LCTRL T  &hml LSHFT C  &kp B        &kp DOT      &hmr RSHFT H  &hmr RCTRL E  &hmr RALT A  &hmr RGUI I
-&lt 4 Z      &kp X        &kp K         &kp G         &kp W        &kp J        &kp L         &kp SEMI      &kp SQT      &kp COMMA
                                         &lt 8 SPACE   &lt 6 TAB    &lt 7 ENTER  &lt 5 BSPC
             >;
         };
@@ -468,7 +468,7 @@
             bindings = <
 &kp LC(LG(LEFT))  &kp LC(LG(D))  &kp LC(LG(F4))  &kp LC(LG(RIGHT))  &kp LS(LC(ESC))    &kp LC(E)    &kp LC(LEFT)  &kp LS(F10)  &easyclose  &kp LC(RIGHT)
 &kp LWIN          &kp LALT       &kp LCTRL       &kp LSHIFT         &kp LC(A)          &kp PSCRN    &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT
-&lt 1 LC(Z)       &kp LC(X)      &kp LC(C)       &kp LC(V)          &kp LG(V)          &kp LG(TAB)  &kp HOME      &kp PG_DN    &kp PG_UP   &kp END
+&lt 2 LC(Z)       &kp LC(X)      &kp LC(C)       &kp LC(V)          &kp LG(V)          &kp LG(TAB)  &kp HOME      &kp PG_DN    &kp PG_UP   &kp END
                                                  &trans             &trans             &lt 7 ENTER  &trans
             >;
 
@@ -496,7 +496,7 @@
         adjust_layer {
             bindings = <
 &bootloader   &none         &bt BT_PRV    &bt BT_NXT    &bt BT_CLR        &none   &none   &none  &none  &bootloader
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none   &to 2   &to 1  &to 0  &to 3
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &none   &to 0   &to 2  &to 1  &to 3
 &trans        &none         &none         &none         &bt BT_CLR_ALL    &none   &tog 7  &none  &none  &trans
                                           &trans        &trans            &trans  &trans
             >;
