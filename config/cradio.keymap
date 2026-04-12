@@ -76,6 +76,15 @@
 
             tapping-term-ms = <200>;
         };
+
+        extap: extap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "EXTAP";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&m_ex>;
+
+            tapping-term-ms = <150>;
+        };
     };
 
     combos {
@@ -443,6 +452,21 @@
             wait-ms = <1>;
             tap-ms = <1>;
         };
+
+        m_ex: m_ex {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp E>,
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_tap>,
+                <&kp X>;
+
+            label = "M_EX";
+            wait-ms = <1>;
+            tap-ms = <1>;
+        };
     };
 
     keymap {
@@ -474,7 +498,7 @@
         Lesswood {
             bindings = <
 &kp W        &kp Y        &kp O         &kp U         &kp EQUAL    &kp Z       &kp L         &kp D         &kp P        &kp V
-&hml LWIN C  &hml LALT I  &hml LCTRL A  &hml LSHFT E  &kp X        &kp K       &hmr RSHFT H  &hmr RCTRL T  &hmr RALT N  &hmr RWIN S
+&hml LWIN C  &hml LALT I  &hml LCTRL A  &hml LSHFT E  &extap       &kp K       &hmr RSHFT H  &hmr RCTRL T  &hmr RALT N  &hmr RWIN S
 &kp SQT      &kp COMMA    &kp J         &kp DOT       &kp SEMI     &qutap      &kp M         &kp G         &kp B        &kp F
                                         &lt 8 SPACE   &lt 6 TAB    &lt 7 BSPC  &lt 5 R
             >;
